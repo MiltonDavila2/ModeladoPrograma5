@@ -1,0 +1,32 @@
+﻿@model IEnumerable<App.Models.Producto>
+
+@{
+    ViewData["Title"] = "Lista de productos";
+
+
+}
+
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Nombre</td>
+                <td>@product.Precio</td>
+                <td>@product.Categoria.Nombre</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Producto/Create" class="btn btn-primary">Crear Nuevo Producto</a>
